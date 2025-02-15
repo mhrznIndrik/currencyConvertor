@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Quote</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header class="bg-[#222831] font-bold uppercase text-[#00ADB5] px-3 py-5 fixed top-0 left-0 right-0 z-10">
+        <nav class="flex justify-between items-center max-w-screen-xl mx-auto">
+            <div>
+                <h1 class="text-3xl font-bold text-[#00ADB5]">Finance Forge</h1>
+            </div>
+            <ul class="flex gap-10 items-center hidden md:flex">
+                <li><a href="./index.html" class="text-lg hover:text-white transition-all">Home</a></li>
+                <li><a href="./aboutAndQuote.html" class="text-lg text-[#5FD3D8] hover:text-white underline transition-all">About & Quote</a></li>
+                <li><a href="./services.html" class="text-lg hover:text-white transition-all">Services</a></li>
+                <li><a href="./userlist.html" class="text-lg hover:text-white transition-all">User List</a></li>
+                <li><a href="./team.html" class="text-lg hover:text-white transition-all">Team</a></li>
+                <li><a href="./profile.html" class="text-lg hover:text-white transition-all">Profile</a></li>
+                <li><a class="flex items-center gap-2 hover:text-white" href="./logout.html">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a></li>
+                <li><a href="./search.html">
+                    <i class="fa-solid fa-magnifying-glass hover:text-white transition-all"></i>
+                </a></li>
+            </ul>
+            <div class="text-2xl hover:scale-150 hover:text-white transition-all md:hidden">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex justify-center items-center min-h-screen bg-gradient-to-b from-[#00ADB5] to-[#222831] px-6">
+        <div class="text-center w-full max-w-4xl">
+            <div id="random-quote" class="text-[#00ADB5] my-6 p-6 bg-[#1B1F24] rounded-lg shadow-lg">
+                <h3 class="text-4xl font-bold mb-4">Quote of the Day</h3>
+                <p id="quote-text" class="text-white text-lg italic"></p>
+            </div>
+
+            <h2 class="text-white text-5xl font-bold mb-6">Generate <span class="text-6xl text-[#222831]">Quote</span></h2>
+            <p class="text-white text-xl mb-4">Investment Amount</p>
+            <form id="quote-form" class="flex flex-col items-center space-y-4 w-full max-w-lg mx-auto">
+                <input
+                    id="investment-input"
+                    type="number"
+                    placeholder="Enter amount"
+                    class="w-full p-3 rounded text-[#222831] placeholder-[#888] focus:outline-none focus:ring-4 focus:ring-[#5FD3D8] shadow-lg"
+                    required
+                />
+                <button
+                    type="submit"
+                    class="w-full bg-[#00ADB5] hover:bg-[#393E46] text-white font-bold py-3 rounded shadow-lg transition-all"
+                >
+                    Generate
+                </button>
+            </form>
+            <div id="quote-result" class="text-white mt-6 hidden p-6 bg-[#1B1F24] rounded-lg shadow-lg">
+                <i class="fa-solid fa-chart-line text-3xl text-[#5FD3D8] mb-4"></i>
+                <p id="investment-message" class="text-lg font-bold"></p>
+                <p id="earnings-message" class="text-lg"></p>
+            </div>
+            
+            <div class="absolute w-80 bottom-0 right-0 opacity-50 hidden md:block">
+                <img src="./images/img1.png" alt="">
+            </div>
+
+            <section class="mt-12 text-white max-w-3xl text-center mx-auto">
+                <h3 class="text-3xl font-bold mb-4">We Are Finexo</h3>
+                <p class="text-base leading-relaxed">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some form, by injected humour, or randomised words which don't look even slightly
+                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                    anything embarrassing hidden in the middle of text.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-[#222831] text-[#00ADB5] w-full py-6">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div>
+                <h2 class="font-bold text-lg pb-4">Address</h2>
+                <p><i class="fa-solid fa-location-dot pr-4"></i>Lalitpur, Nepal</p>
+                <p><i class="fa-solid fa-phone pr-4"></i>Call: +977 9800000000</p>
+                <p><i class="fa-solid fa-envelope pr-4"></i>financeforge@gmail.com</p>
+                <div class="flex gap-6 mt-3 text-xl">
+                    <a href="#" class="hover:text-white transition-colors duration-300 ease-in-out">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors duration-300 ease-in-out">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors duration-300 ease-in-out">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg pb-4">Info</h2>
+                <p>
+                    I develop user-friendly, real-time currency converters for USD, EUR, GBP, BRL, JPY, and TRY, ensuring accuracy and security for transactions.
+                </p>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg pb-4">Links</h2>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Services</a></li>
+                    <li><a href="#" class="hover:underline">Why Us</a></li>
+                    <li><a href="#" class="hover:underline">Team</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg pb-4">Subscribe</h2>
+                <form>
+                    <input type="email" placeholder="Enter email" class="mt-2 w-full p-2 text-[#00ADB5] rounded">
+                    <button class="mt-2 w-full bg-[#00ADB5] hover:bg-[#393E46] text-[#222831] py-2 rounded" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-6 border-t border-gray-600 pt-4">
+            &copy; 2025 All Rights Reserved By <span class="font-bold">Indrik Maharjan</span>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("quote-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const investmentAmount = parseFloat(document.getElementById("investment-input").value);
+            if (isNaN(investmentAmount) || investmentAmount <= 0) {
+                alert("Please enter a valid investment amount.");
+                return;
+            }
+
+            const annualRate = 0.10;
+            const years = 5;
+            const potentialEarnings = investmentAmount * Math.pow(1 + annualRate, years);
+
+            document.getElementById("investment-message").innerText = `Based on your investment of $${investmentAmount.toFixed(2)}:`;
+            document.getElementById("earnings-message").innerText = `Potential earnings after ${years} years: $${potentialEarnings.toFixed(2)}`;
+
+            document.getElementById("random-quote").classList.add("hidden");
+            document.getElementById("quote-result").classList.remove("hidden");
+        });
+
+        const quotes = [
+            "The best investment you can make is in yourself. - Warren Buffett",
+            "Do not save what is left after spending, but spend what is left after saving. - Warren Buffett",
+            "Financial freedom is freedom from fear. - Robert Kiyosaki",
+            "Investing should be more like watching paint dry or watching grass grow. - Paul Samuelson",
+            "An investment in knowledge pays the best interest. - Benjamin Franklin",
+            "It’s not whether you’re right or wrong that’s important, but how much money you make when you’re right and how much you lose when you’re wrong. - George Soros",
+            "Successful investing is about managing risk, not avoiding it. - Benjamin Graham"
+        ];
+
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById("quote-text").innerText = randomQuote;
+    </script>
+</body>
+</html>

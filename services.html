@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <header class="bg-[#222831] font-bold uppercase  text-[#00ADB5] px-3 py-5 absolute z-10 w-full">
+        <nav class="flex justify-between items-center max-container">
+            <div>
+                <h1 class="text-3xl font-bold text-[#00ADB5]">Finance Forge</h1>
+            </div>
+            <ul class="flex justify-center items-center gap-10 max-lg:hidden ">
+                <li><a href="./index.html"
+                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">Home</a>
+                </li>
+                <li><a href="./aboutAndQuote.html"
+                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">About
+                        & Quote</a></li>
+                <li><a href="./services.html"
+                        class="underline text-[#5FD3D8]text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">Services</a>
+                </li>
+                <li><a href="./userlist.html"
+                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">User
+                        List</a></li>
+                <li><a href="./team.html"
+                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">Team</a>
+                </li>
+                <li><a href="./profile.html"
+                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">Profile</a>
+                </li>
+                <li><a class="flex items-center gap-2 hover:text-white hover:scale-150 transition-transform duration-200"
+                        href="./logout.html">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a></li>
+                <li><a href="./search.html">
+                        <i
+                            class="fa-solid fa-magnifying-glass hover:scale-150 hover:text-white transition-transform duration-200"></i>
+                    </a></li>
+            </ul>
+            <div class="text-2xl hover:scale-150 hover:text-white transition-transform duration-200 hidden max-lg:block">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div
+            class="w-screen h-screen bg-gradient-to-b from-[#00ADB5] to-[#222831] text-center flex items-center justify-center">
+            <div class="z-1 bg-[#222831] p-8 rounded-2xl shadow-lg text-[#00ADB5] max-w-lg w-full">
+                <h2 class="text-4xl font-bold mb-6">Currency
+                    <span class="text-5xl text-white">Converter</span>
+                </h2>
+                <form id="currency-converter" class="space-y-4">
+                    <div>
+                        <label for="amount" class="block mb-2">Amount</label>
+                        <input type="number" id="amount" placeholder="Enter amount"
+                            class="w-full p-2 rounded text-[#00ADB5]" required />
+                    </div>
+                    <div>
+                        <label for="from-currency" class="block mb-2">From Currency</label>
+                        <select id="from-currency" class="w-full p-2 rounded text-[#00ADB5]">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="BRL">BRL</option>
+                            <option value="JPY">JPY</option>
+                            <option value="TRY">TRY</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="to-currency" class="block mb-2">To Currency</label>
+                        <select id="to-currency" class="w-full p-2 rounded text-[#00ADB5]">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="BRL">BRL</option>
+                            <option value="JPY">JPY</option>
+                            <option value="TRY">TRY</option>
+                        </select>
+                    </div>
+                    <button type="button" onclick="convertCurrency()"
+                        class="w-full bg-[#00ADB5] text-[#222831] py-2 rounded hover:bg-[#393E46] transition-colors duration-300">
+                        Convert
+                    </button>
+                </form>
+                <p id="result" class="mt-6 text-2xl font-bold"></p>
+            </div>
+        </div>
+        <div class="usd coin">
+            <img src="./images/usd.jpg" alt="">
+        </div>
+        <div class="eur coin">
+            <img src="./images/euro.jpg" alt="">
+        </div>
+        <div class="gbp coin">
+            <img src="./images/gbp.jpg" alt="">
+        </div>
+        <div class="brl coin">
+            <img src="./images/brl.jpg" alt="">
+        </div>
+        <div class="jpy coin">
+            <img src="./images/jpy.webp" alt="">
+        </div>
+        <div class="try coin">
+            <img src="./images/try.jpg" alt="">
+        </div>
+    </main>
+
+    <script>
+        async function convertCurrency() {
+            const amount = document.getElementById("amount").value;
+            const fromCurrency = document.getElementById("from-currency").value;
+            const toCurrency = document.getElementById("to-currency").value;
+
+            if (fromCurrency === toCurrency) {
+                document.getElementById("result").innerText = `Converted Amount: ${amount} ${toCurrency}`;
+                return;
+            }
+ 
+            const apiKey = '69da7b7e46b080274ada9c40'; 
+            const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.result === 'success') {
+                    const conversionRate = data.conversion_rates[toCurrency];
+                    const convertedAmount = (amount * conversionRate).toFixed(2);
+                    document.getElementById("result").innerText = `Converted Amount: ${convertedAmount} ${toCurrency}`;
+                } else {
+                    document.getElementById("result").innerText = 'Failed to fetch exchange rates';
+                }
+            } catch (error) {
+                document.getElementById("result").innerText = 'Error fetching data';
+            }
+        }
+
+    </script>
+
+    <footer class="bg-[#222831] text-[#00ADB5] w-screen py-6">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div>
+                <h2 class="font-bold text-lg pb-4">Address</h2>
+                <p>
+                    <i
+                        class="fa-solid fa-location-dot hover:text-white transition-colors duration-300 ease-in-out pr-4"></i>
+                    Lalitpur, Nepal
+                </p>
+                <p>
+                    <i class="fa-solid fa-phone hover:text-white transition-colors duration-300 ease-in-out pr-4"></i>
+                    Call: +977 9800000000
+                </p>
+                <p>
+                    <i
+                        class="fa-solid fa-envelope hover:text-white transition-colors duration-300 ease-in-out pr-4"></i>
+                    financeforge@gmail.com
+                </p>
+                <div class="flex gap-16 space-x-3 mt-3 text-xl text-[#00ADB5]">
+                    <a href="#" class="hover:text-white transition-colors duration-300 ease-in-out">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors duration-300 ease-in-out">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors duration-300 ease-in-out">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg pb-4">Info</h2>
+                <p>
+                    I develop user-friendly, real-time currency converters for USD, EUR, GBP, BRL, JPY, and TRY,
+                    ensuring accuracy and security for transactions.
+                </p>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg pb-4">Links</h2>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Services</a></li>
+                    <li><a href="#" class="hover:underline">Why Us</a></li>
+                    <li><a href="#" class="hover:underline">Team</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg pb-4">Subscribe</h2>
+                <form>
+                    <input type="email" placeholder="Enter email" class="mt-2 w-full p-2 text-[#00ADB5] rounded">
+                    <button
+                        class="mt-2 w-full bg-[#00ADB5] hover:bg-[#393E46] transition-colors duration-500 ease-in-out hover:text-[#00ADB5] text-[#222831] py-2 rounded"
+                        type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-6 border-t border-gray-600 pt-4">
+            &copy; 2025 All Rights Reserved By <span class="font-bold">Indrik Maharjan</span>
+        </div>
+    </footer>
+</body>
+
+</html>
