@@ -13,45 +13,46 @@
 </head>
 
 <body>
-    <header class="bg-[#222831] font-bold uppercase  text-[#00ADB5] px-3 py-5 absolute z-10 w-full">
-        <nav class="flex justify-between items-center max-container">
+    <header class="bg-[#222831] font-bold uppercase text-[#00ADB5] px-3 py-5 fixed top-0 left-0 right-0 z-10">
+        <nav class="flex justify-between items-center max-w-screen-xl mx-auto">
             <div>
-                <h1 class="text-3xl font-bold text-[#00ADB5]">Finance Forge</h1>
+                <h1 class="text-3xl font-bold text-[#00ADB5] ">Finance Forge</h1>
             </div>
-            <ul class="flex justify-center items-center gap-10 max-lg:hidden ">
-                <li><a href="./index.html"
-                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">Home</a>
-                </li>
+            <!-- Desktop Menu -->
+            <ul class="flex gap-10 items-center hidden md:flex">
+                <li><a href="./index.html" class="text-lg underline text-[#5FD3D8] hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200 inline-block">Home</a></li>
                 <li><a href="./aboutAndQuote.html"
-                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">About
-                        & Quote</a></li>
-                <li><a href="./services.html"
-                        class="underline text-[#5FD3D8]text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">Services</a>
-                </li>
-                <li><a href="./userlist.html"
-                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">User
-                        List</a></li>
-                <li><a href="./team.html"
-                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">Team</a>
-                </li>
-                <li><a href="./profile.html"
-                        class="text-lg hover:text-white hover:scale-150 transition-transform duration-200 inline-block">Profile</a>
-                </li>
-                <li><a class="flex items-center gap-2 hover:text-white hover:scale-150 transition-transform duration-200"
-                        href="./logout.html">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        Logout
-                    </a></li>
-                <li><a href="./search.html">
-                        <i
-                            class="fa-solid fa-magnifying-glass hover:scale-150 hover:text-white transition-transform duration-200"></i>
+                        class="text-lg  hover:text-white  transition-all hover:scale-150 hover:text-white transition-transform duration-200 inline-block">About & Quote</a></li>
+                <li><a href="./services.html" class="text-lg hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200 inline-block">Services</a></li>
+                <li><a href="./userlist.html" class="text-lg hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200 inline-block">User List</a></li>
+                <li><a href="./team.html" class="text-lg hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200 inline-block">Team</a></li>
+                <li><a href="./profile.html" class="text-lg hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200 inline-block">Profile</a></li>
+                <li><a class="flex items-center gap-2 hover:text-white hover:scale-150 hover:text-white transition-transform duration-200 inline-block" href="./logout.html">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
                     </a></li>
             </ul>
-            <div class="text-2xl hover:scale-150 hover:text-white transition-transform duration-200 hidden max-lg:block">
+
+            <!-- Mobile Menu -->
+            <ul id="mobile-menu" class="flex flex-col items-center gap-6 bg-[#222831] text-[#00ADB5] absolute top-0 left-0 w-full h-screen pt-20 md:hidden hidden">
+                <li><a href="./index.html" class="inline-block hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200">Home</a></li>
+                <li><a href="./aboutAndQuote.html"
+                        class="inline-block text-lg text-[#5FD3D8] hover:text-white underline transition-all hover:scale-150 hover:text-white transition-transform duration-200">About & Quote</a></li>
+                <li><a href="./services.html" class="inline-block text-lg hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200">Services</a></li>
+                <li><a href="./userlist.html" class="inline-block text-lg hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200">User List</a></li>
+                <li><a href="./team.html" class="inline-block text-lg hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200">Team</a></li>
+                <li><a href="./profile.html" class="inline-block text-lg hover:text-white transition-all hover:scale-150 hover:text-white transition-transform duration-200">Profile</a></li>
+                <li><a class="inline-block flex items-center gap-2 hover:text-white hover:scale-150 hover:text-white transition-transform duration-200" href="./logout.html">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </a></li>
+            </ul>
+
+            <!-- Menu Icon for Mobile -->
+            <div id="menu-icon" class="text-2xl hover:scale-150 hover:text-white transition-all md:hidden">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
     </header>
+
     <main>
         <div
             class="w-screen h-screen bg-gradient-to-b from-[#00ADB5] to-[#222831] text-center flex items-center justify-center">
@@ -147,67 +148,69 @@
 
     </script>
 
-    <footer class="bg-[#222831] text-[#00ADB5] w-screen py-6">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div>
-                <h2 class="font-bold text-lg pb-4">Address</h2>
-                <p>
-                    <i
-                        class="fa-solid fa-location-dot hover:text-white transition-colors duration-300 ease-in-out pr-4"></i>
-                    Lalitpur, Nepal
-                </p>
-                <p>
-                    <i class="fa-solid fa-phone hover:text-white transition-colors duration-300 ease-in-out pr-4"></i>
-                    Call: +977 9800000000
-                </p>
-                <p>
-                    <i
-                        class="fa-solid fa-envelope hover:text-white transition-colors duration-300 ease-in-out pr-4"></i>
-                    financeforge@gmail.com
-                </p>
-                <div class="flex gap-16 space-x-3 mt-3 text-xl text-[#00ADB5]">
-                    <a href="#" class="hover:text-white transition-colors duration-300 ease-in-out">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="#" class="hover:text-white transition-colors duration-300 ease-in-out">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="hover:text-white transition-colors duration-300 ease-in-out">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <h2 class="font-bold text-lg pb-4">Info</h2>
-                <p>
-                    I develop user-friendly, real-time currency converters for USD, EUR, GBP, BRL, JPY, and TRY,
-                    ensuring accuracy and security for transactions.
-                </p>
-            </div>
-            <div>
-                <h2 class="font-bold text-lg pb-4">Links</h2>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:underline">Home</a></li>
-                    <li><a href="#" class="hover:underline">About</a></li>
-                    <li><a href="#" class="hover:underline">Services</a></li>
-                    <li><a href="#" class="hover:underline">Why Us</a></li>
-                    <li><a href="#" class="hover:underline">Team</a></li>
-                </ul>
-            </div>
-            <div>
-                <h2 class="font-bold text-lg pb-4">Subscribe</h2>
-                <form>
-                    <input type="email" placeholder="Enter email" class="mt-2 w-full p-2 text-[#00ADB5] rounded">
-                    <button
-                        class="mt-2 w-full bg-[#00ADB5] hover:bg-[#393E46] transition-colors duration-500 ease-in-out hover:text-[#00ADB5] text-[#222831] py-2 rounded"
-                        type="submit">Subscribe</button>
-                </form>
+<footer class="bg-[#222831] text-[#00ADB5] w-screen py-6 overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6">
+
+        <div>
+            <h2 class="font-bold text-lg pb-4">Address</h2>
+            <p>
+                <i
+                    class="fa-solid fa-location-dot hover:text-white transition-colors duration-300 ease-in-out pr-4"></i>
+                Lalitpur, Nepal
+            </p>
+            <p>
+                <i class="fa-solid fa-phone hover:text-white transition-colors duration-300 ease-in-out pr-4"></i>
+                Call: +977 9800000000
+            </p>
+            <p>
+                <i
+                    class="fa-solid fa-envelope hover:text-white transition-colors duration-300 ease-in-out pr-4"></i>
+                financeforge@gmail.com
+            </p>
+            <div class="flex gap-16 space-x-3 mt-3 text-xl text-[#00ADB5]">
+                <a href="#" class="hover:scale-150 hover:text-white transition-transform duration-200 inline-block">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="hover:scale-150 hover:text-white transition-transform duration-200 inline-block">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="hover:scale-150 hover:text-white transition-transform duration-200 inline-block">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
         </div>
-        <div class="text-center mt-6 border-t border-gray-600 pt-4">
-            &copy; 2025 All Rights Reserved By <span class="font-bold">Indrik Maharjan</span>
+        <div>
+            <h2 class="font-bold text-lg pb-4">Info</h2>
+            <p>
+                I develop user-friendly, real-time currency converters for USD, EUR, GBP, BRL, JPY, and TRY,
+                ensuring accuracy and security for transactions.
+            </p>
         </div>
-    </footer>
+        <div>
+            <h2 class="font-bold text-lg pb-4">Links</h2>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:scale-150 hover:text-white transition-transform duration-200 inline-block">Home</a></li>
+                <li><a href="#" class="hover:scale-150 hover:text-white transition-transform duration-200 inline-block">About</a></li>
+                <li><a href="#" class="hover:scale-150 hover:text-white transition-transform duration-200 inline-block">Services</a></li>
+                <li><a href="#" class="hover:scale-150 hover:text-white transition-transform duration-200 inline-block">Why Us</a></li>
+                <li><a href="#" class="hover:scale-150 hover:text-white transition-transform duration-200 inline-block">Team</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="font-bold text-lg pb-4">Subscribe</h2>
+            <form>
+                <input type="email" placeholder="Enter email" class="mt-2 w-full p-2 text-[#00ADB5] rounded">
+                <button
+                    class="mt-2 w-full bg-[#00ADB5] hover:bg-[#393E46] transition-colors duration-500 ease-in-out hover:text-[#00ADB5] text-[#222831] py-2 rounded"
+                    type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+    <div class="text-center mt-6 border-t border-gray-600 pt-4">
+        &copy; 2025 All Rights Reserved By <span class="font-bold">Indrik Maharjan</span>
+    </div>
+</footer>
+<script src="./script.js"></script>
 </body>
 
 </html>

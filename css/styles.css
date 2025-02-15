@@ -8,6 +8,8 @@ body, html {
     font-family: 'Nunito', sans-serif;
 }
 
+
+
 h1{
     font-family: 'Lato', sans-serif;
 }
@@ -23,7 +25,7 @@ h1{
     bottom: 0;
     left: 0;
     width: 30%;
-    height: 50%; 
+    height: 40%; 
     background-color: #222831;
     border-radius: 0 100% 0 0;
     overflow: hidden; 
@@ -49,7 +51,7 @@ h1{
     top: 0;
     right: 0;
     width: 30%;
-    height: 50%; 
+    height: 40%; 
     background-color: #222831;
     border-radius:0 0 0 100%;
     overflow: hidden;
@@ -159,6 +161,16 @@ button:hover {
 
     .coin {
         visibility: hidden;
+    }
+
+    .banner-top-shape{
+        width: 50%;
+        height: 40%;
+    }
+
+    .banner-bottom-shape{
+        width: 50%;
+        height: 40%;
     }
 }
 
